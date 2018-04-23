@@ -1,0 +1,8 @@
+applications:
+- name: csnodejs
+  memory: 256mb
+  stack: cflinuxfs2
+  buildpack: nodejs_buildpack
+  services:
+    - dev-config-server
+

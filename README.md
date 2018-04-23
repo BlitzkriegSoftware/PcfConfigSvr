@@ -10,10 +10,18 @@ PCF Configuration Server is the preferred option to externalizing configuration 
 
 * <a href="https://docs.pivotal.io/spring-cloud-services/1-4/common/config-server/" target="_blank">https://docs.pivotal.io/spring-cloud-services/1-4/common/config-server/</a>
 * <a href="https://docs.pivotal.io/spring-cloud-services/1-4/common/config-server/configuring-with-git.html" target="_blank">https://docs.pivotal.io/spring-cloud-services/1-4/common/config-server/configuring-with-git.html</a>
+* <a href="https://docs.pivotal.io/spring-cloud-services/1-4/common/config-server/background-information.html" target="_blank">https://docs.pivotal.io/spring-cloud-services/1-4/common/config-server/background-information.html</a>
 
 ## Creating Configuration Server (CS) ##
 
 There is a folder called `scripts` that has two prototypical scripts for creating and deleting an instance of Configuration Server (CS) in the current ORG and SPACE. These were testing on <a href="https://api.run.pivotal.io" target="_blank">https://api.run.pivotal.io</a>, you may need to make changes if you are running on another PCF install.
+
+## Configuring Configuration Server ##
+
+The easiest way to provide name/value pairs for CS to serve up to applications is to create a GIT repo with either YAML or Properties files (we are using YAML for the demo).
+
+See: <a href="https://docs.pivotal.io/spring-cloud-services/1-4/common/config-server/configuring-with-git.html" target="_blank">https://docs.pivotal.io/spring-cloud-services/1-4/common/config-server/configuring-with-git.html</a>
+
 
 ## Demos ## 
 
@@ -23,12 +31,17 @@ We have two demos one in .NET Core, and the other in NodeJS
 
 Make sure your configuration server is up and going in PCF.
 
+Finding the CS from code. The easiest way to do this is to bind to the service in your Manifest and read and parse the VCAP_SERVICES environment variable.
+
+
 ### .NET Core ###
 
 
 
 
 ### NodeJS ###
+
+To query the config server in NodeJS we use the library: <a href="https://www.npmjs.com/package/node-cloud-config-client" target="_blank">https://www.npmjs.com/package/node-cloud-config-client</a>
 
 
 
