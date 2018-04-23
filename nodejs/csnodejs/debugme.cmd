@@ -1,0 +1,1 @@
+SET DEBUG=csnodejs:* & npm start
