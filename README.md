@@ -36,15 +36,26 @@ Finding the CS from code. The easiest way to do this is to bind to the service i
 
 ### .NET Core ###
 
+To query the config server in .NET Core we use:
+* System.Net.Http, HttpClient
+* Newtonsoft.Json, JObject
 
+So we use the HttpClient to do the requests, grab the text and parse them as JObjects. 
+
+When running this Web API 2 demo, browse to your URL plus `/swagger` to be able to play with the API.
 
 
 ### NodeJS ###
 
-To query the config server in NodeJS we use the library: <a href="https://github.com/request/request" target="_blank">https://github.com/request/request</a>
+To query the config server in NodeJS we use the NPM libraries: 
+* request
+* request-promises
 
+The promises add-on makes request a lot more friendly. 
 
+We parse the config on start up, and then propagate it a Global (yes, ugly) for simplicity.
 
+This example is a small web app that shows the results in a table on the home page.
 
 
 ## About me ##
