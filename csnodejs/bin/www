@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 
+var path = require("path");
+global.WebRoot = path.join(__dirname, '..');
+
 /**
  * Module dependencies.
  */
@@ -7,6 +10,10 @@
 var app = require('../app');
 var debug = require('debug')('csnodejs:server');
 var http = require('http');
+
+var config = require('../public/javascripts/pcfconfig');
+
+config();
 
 /**
  * Get port from environment and store in Express.

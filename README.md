@@ -41,7 +41,7 @@ Finding the CS from code. The easiest way to do this is to bind to the service i
 
 ### NodeJS ###
 
-To query the config server in NodeJS we use the library: <a href="https://www.npmjs.com/package/node-cloud-config-client" target="_blank">https://www.npmjs.com/package/node-cloud-config-client</a>
+To query the config server in NodeJS we use the library: <a href="https://github.com/request/request" target="_blank">https://github.com/request/request</a>
 
 
 
