@@ -1,0 +1,181 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>csdotnet</name>
+    </assembly>
+    <members>
+        <member name="T:csdotnet.Controllers.ConfigController">
+            <summary>
+            Demo of using Configuration Server
+            </summary>
+        </member>
+        <member name="M:csdotnet.Controllers.ConfigController.#ctor(Microsoft.AspNetCore.Hosting.IHostingEnvironment,Microsoft.Extensions.Logging.ILogger{csdotnet.Controllers.ConfigController})">
+            <summary>
+            CTOR
+            </summary>
+            <param name="env">IHostingEnvironment</param>
+            <param name="logger">ILogger</param>
+        </member>
+        <member name="M:csdotnet.Controllers.ConfigController.ConfigGet">
+            <summary>
+            Gets the configuration for this app from the Configuration Server
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:csdotnet.Controllers.ConfigController.ConfigGetByName(System.String)">
+            <summary>
+            Get a configuration by name
+            </summary>
+            <param name="name">Name of configuration</param>
+            <returns>ConfigurationModel</returns>
+        </member>
+        <member name="M:csdotnet.Controllers.ConfigController.ConfigGetBySource(System.String)">
+            <summary>
+            Get by Source
+            </summary>
+            <param name="source">Contains</param>
+            <returns>List of matching configuration</returns>
+        </member>
+        <member name="T:csdotnet.Lib.ConfigHelper">
+            <summary>
+            Helper: Configuration from Config Server
+            </summary>
+        </member>
+        <member name="M:csdotnet.Lib.ConfigHelper.#ctor(System.String)">
+            <summary>
+            CTOR
+            </summary>
+            <param name="webRoot">UNC path to web root</param>
+        </member>
+        <member name="P:csdotnet.Lib.ConfigHelper.WebRoot">
+            <summary>
+            Web Root as a UNC path e.g. w. drive + path...
+            </summary>
+        </member>
+        <member name="M:csdotnet.Lib.ConfigHelper.Clear">
+            <summary>
+            Clear configuration
+            </summary>
+        </member>
+        <member name="M:csdotnet.Lib.ConfigHelper.Get">
+            <summary>
+            Get the configration from Config Server
+            </summary>
+        </member>
+        <member name="T:csdotnet.Models.ConfigurationModel">
+            <summary>
+            Configuration Model
+            </summary>
+        </member>
+        <member name="P:csdotnet.Models.ConfigurationModel.Source">
+            <summary>
+            Source
+            </summary>
+        </member>
+        <member name="P:csdotnet.Models.ConfigurationModel.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:csdotnet.Models.ConfigurationModel.Value">
+            <summary>
+            Value
+            </summary>
+        </member>
+        <member name="M:csdotnet.Models.ConfigurationModel.ToString">
+            <summary>
+            To String
+            </summary>
+            <returns>Debugging Info</returns>
+        </member>
+        <member name="T:csdotnet.Models.ConfigurationServerSettings">
+            <summary>
+            Settings: Configuration Server 
+            </summary>
+        </member>
+        <member name="P:csdotnet.Models.ConfigurationServerSettings.Access_Token_Uri">
+            <summary>
+            UAA Server Endpoint
+            </summary>
+        </member>
+        <member name="P:csdotnet.Models.ConfigurationServerSettings.Client_Id">
+            <summary>
+            Client Id (username)
+            </summary>
+        </member>
+        <member name="P:csdotnet.Models.ConfigurationServerSettings.Client_Secret">
+            <summary>
+            Client Secret (password)
+            </summary>
+        </member>
+        <member name="P:csdotnet.Models.ConfigurationServerSettings.Configuration_Server_Url">
+            <summary>
+            Configuration Server Endpoint
+            </summary>
+        </member>
+        <member name="P:csdotnet.Models.ConfigurationServerSettings.SecurityToken">
+            <summary>
+            Security Token (Bearer)
+            </summary>
+        </member>
+        <member name="P:csdotnet.Models.ConfigurationServerSettings.IsLocal">
+            <summary>
+            Is config from local file (true) or from the environment (false)
+            </summary>
+        </member>
+        <member name="M:csdotnet.Models.ConfigurationServerSettings.ToString">
+            <summary>
+            To String
+            </summary>
+            <returns>Debugging Text</returns>
+        </member>
+        <member name="T:csdotnet.Program">
+            <summary>
+            Program
+            </summary>
+        </member>
+        <member name="M:csdotnet.Program.Main(System.String[])">
+            <summary>
+            Main
+            </summary>
+            <param name="args">args</param>
+        </member>
+        <member name="M:csdotnet.Program.BuildWebHost(System.String[])">
+            <summary>
+            Build Web Host
+            </summary>
+            <param name="args">args</param>
+            <returns>IWebHost</returns>
+        </member>
+        <member name="T:csdotnet.Startup">
+            <summary>
+            Startup ASP.NET
+            </summary>
+        </member>
+        <member name="M:csdotnet.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            CTOR
+            </summary>
+            <param name="configuration">IConfiguration</param>
+        </member>
+        <member name="P:csdotnet.Startup.Configuration">
+            <summary>
+            IConfiguration
+            </summary>
+        </member>
+        <member name="M:csdotnet.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+             <summary>
+            This method gets called by the runtime. Use this method to add services to the container. 
+             </summary>
+             <param name="services">IServiceCollection</param>
+        </member>
+        <member name="M:csdotnet.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment,Microsoft.Extensions.Logging.ILoggerFactory)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app">IApplicationBuilder</param>
+            <param name="env">IHostingEnvironment</param>
+            <param name="loggerFactory">ILoggerFactory</param>
+        </member>
+    </members>
+</doc>

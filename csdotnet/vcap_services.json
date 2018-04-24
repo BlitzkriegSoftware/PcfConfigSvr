@@ -1,0 +1,24 @@
+{
+    "VCAP_SERVICES": {
+        "p-config-server": [{
+            "binding_name": null,
+            "credentials": {
+                "access_token_uri": "https://p-spring-cloud-services.uaa.run.pivotal.io/oauth/token",
+                "client_id": "p-config-server-daf473df-a0ff-477f-bc46-e2e88a468b5c",
+                "client_secret": "6qkDUb8oT0dL",
+                "uri": "https://config-91175d36-6ec8-4df6-a0ab-1f6e83a2edd1.cfapps.io"
+            },
+            "instance_name": "dev-config-server",
+            "label": "p-config-server",
+            "name": "dev-config-server",
+            "plan": "standard",
+            "provider": null,
+            "syslog_drain_url": null,
+            "tags": [
+                "configuration",
+                "spring-cloud"
+            ],
+            "volume_mounts": []
+        }]
+    }
+}

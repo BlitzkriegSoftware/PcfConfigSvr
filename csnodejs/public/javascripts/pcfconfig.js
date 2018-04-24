@@ -21,9 +21,11 @@ function serverConfig() {
         var vcap_services = fs.readFileSync(serviceFile, 'UTF8');
     }
 
+    console.log("VCAP_SERVICES:\n" + vcap_services);
+
     vcap_services = JSON.parse(vcap_services);
 
-    var creds = vcap_services.VCAP_SERVICES["p-config-server"][0].credentials;
+    var creds = eachRecursive( vcap_services, "access_token_uri" );
 
     var cs = {
         access_token_uri: creds.access_token_uri,
@@ -33,6 +35,21 @@ function serverConfig() {
     };
 
     return cs;
+}
+
+function eachRecursive(obj, hasThisProperty)
+{
+    for (var k in obj)
+    {
+        var value = obj[k];
+        if (typeof value == "object" && value !== null) {
+            if (value.hasOwnProperty(hasThisProperty)) { 
+                return value;
+            }
+            return eachRecursive(value, hasThisProperty);
+        }
+        
+    }
 }
 
 function parseConfig(tokenJson) {
