@@ -37,6 +37,7 @@ function serverConfig() {
     return cs;
 }
 
+// search the object tree for an object that has a named property
 function eachRecursive(obj, hasThisProperty)
 {
     for (var k in obj)
