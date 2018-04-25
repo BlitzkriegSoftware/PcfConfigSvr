@@ -36,6 +36,17 @@
             <param name="source">Contains</param>
             <returns>List of matching configuration</returns>
         </member>
+        <member name="T:csdotnet.Controllers.HomeController">
+            <summary>
+            Home
+            </summary>
+        </member>
+        <member name="M:csdotnet.Controllers.HomeController.Index">
+            <summary>
+            Home page redirects to swagger
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:csdotnet.Lib.ConfigHelper">
             <summary>
             Helper: Configuration from Config Server

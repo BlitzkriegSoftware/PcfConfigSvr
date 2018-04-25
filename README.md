@@ -1,6 +1,6 @@
 # PcfConfigSvr #
 
-Using PCF Config Server from .NET Core and NodeJS
+Creating and using PCF Config Server from .NET Core and NodeJS
 
 ## Introduction ##
 
@@ -22,6 +22,7 @@ The easiest way to provide name/value pairs for CS to serve up to applications i
 
 See: <a href="https://docs.pivotal.io/spring-cloud-services/1-4/common/config-server/configuring-with-git.html" target="_blank">https://docs.pivotal.io/spring-cloud-services/1-4/common/config-server/configuring-with-git.html</a>
 
+By default the demo script creates a CS instance using my GITHUB configuration <a href="https://github.com/BlitzkriegSoftware/pcflabconfig" target="_blank">https://github.com/BlitzkriegSoftware/pcflabconfig</a> which you can use as an example.
 
 ## Demos ## 
 
@@ -33,6 +34,13 @@ Make sure your configuration server is up and going in PCF.
 
 Finding the CS from code. The easiest way to do this is to bind to the service in your Manifest and read and parse the VCAP_SERVICES environment variable.
 
+### Running Locally ###
+
+You will need to:
+
+1. Edit the file `vcap_services_example.json` to put in your settings which you can get from the PCF web dashboard
+2. Copy the file into each demo folder as `vcap_services.json`
+3. Then the demos will run locally using this file
 
 ### .NET Core ###
 
@@ -44,6 +52,7 @@ So we use the HttpClient to do the requests, grab the text and parse them as JOb
 
 When running this Web API 2 demo, browse to your URL plus `/swagger` to be able to play with the API.
 
+I use Visual Studio 2017 to edit .NET projects
 
 ### NodeJS ###
 
@@ -57,6 +66,7 @@ We parse the config on start up, and then propagate it a Global (yes, ugly) for 
 
 This example is a small web app that shows the results in a table on the home page.
 
+I use Visual Studio Code to edit NodeJS projects. It's handy to have the NodeJS plug-ins loaded.
 
 ## About me ##
 
