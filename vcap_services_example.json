@@ -3,10 +3,10 @@
         "p-config-server": [{
             "binding_name": null,
             "credentials": {
-                "access_token_uri": "{your UUA Server URL}",
-                "client_id": "{Your UAA Usernaem}",
-                "client_secret": "{Your UAA Password}",
-                "uri": "{Your configserver endpoint}"
+                "access_token_uri": "{UUA Server URL}",
+                "client_id": "{AKA UAA Username}",
+                "client_secret": "{AKA UAA Password}",
+                "uri": "{Config Server URL}"
             },
             "instance_name": "dev-config-server",
             "label": "p-config-server",
