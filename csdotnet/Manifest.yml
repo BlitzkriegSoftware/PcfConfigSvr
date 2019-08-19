@@ -1,7 +1,7 @@
 applications:
 - name: csdotnet
   memory: 512m
-  stack: cflinuxfs2
+  stack: cflinuxfs3
   buildpack: https://github.com/cloudfoundry/dotnet-core-buildpack.git
   path: .\bin\Debug\netcoreapp2.0\ubuntu.14.04-x64\publish
 
